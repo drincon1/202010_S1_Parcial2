@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Channel</th>
+      <th scope="col">Seasons</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let s of series">
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ s.nombre }}</td>
+      <td>{{ s.canal }}</td>
+      <td>{{ s.temporadas }}</td>
+    </tr>
+  </tbody>
+</table>
+
