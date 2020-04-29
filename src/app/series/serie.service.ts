@@ -10,7 +10,7 @@ import { SerieDetail } from './serieDetail';
 })
 export class SerieService {
 
-private apiUrl = environment.baseUrl;
+private apiUrl = environment.baseUrl + 'series.json';
 constructor(private http: HttpClient) { }
 
 getSeries(): Observable<Array<Serie>> {

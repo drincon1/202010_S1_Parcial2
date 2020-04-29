@@ -7,16 +7,15 @@
       <th scope="col">Seasons</th>
     </tr>
   </thead>
-  <tbody *ngFor="let s of series">
-    <tr>
-      <th scope="row">1</th>
-      <td (click)="onSelected(s)">{{ s.nombre }} </td>
-      <td>{{ s.canal }}</td>
-      <td>{{ s.temporadas }}</td>
+  <tbody>
+    <tr *ngFor="let s of series">
+      <th scope="row">{{s.id}}</th>
+      <td (click)="onSelected(s)">{{s.nombre}}</td>
+      <td>{{s.canal}}</td>
+      <td>{{s.temporadas}}</td>
     </tr>
   </tbody>
 </table>
-<p>Seasons average: [promedio]="promedioTemporadas"</p>
 <div class="row p-2">
   <div class="col border">
     <div *ngIf="selected">
@@ -24,4 +23,3 @@
     </div>
   </div>
 </div>
-

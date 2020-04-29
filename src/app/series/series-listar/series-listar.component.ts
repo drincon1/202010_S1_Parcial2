@@ -14,17 +14,18 @@ export class SeriesListarComponent implements OnInit {
   series: Array<Serie>;
   selectedSerie: SerieDetail;
   selected = false;
-  promedio = 0;
 
-  getBooks(): void {
+  getBooks() {
     this.serieService.getSeries()
-      .subscribe(series => this.series = series);
+      .subscribe(series => {this.series = series});
   }
+
 
   onSelected(s: SerieDetail): void {
     this.selected = true;
     this.selectedSerie = s;
   }
+
 
   ngOnInit() {
     this.getBooks();
