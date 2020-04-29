@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SerieDetail } from '../serieDetail';
+import { SerieService } from '../serie.service';
 
 @Component({
   selector: 'app-serie-detail',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SerieDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() serieDetail: SerieDetail;
+  constructor(private serieService: SerieService) { }
 
+  serieId: number;
+
+  getSerieDetail(): void {
+    this.serieService.getSerieDetail(this.serieId)
+      .subscribe(serieDetail => {
+        this.serieDetail = serieDetail;
+      });
+  }
   ngOnInit() {
+    this.getSerieDetail();
   }
 
 }

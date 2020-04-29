@@ -10,10 +10,18 @@
   <tbody *ngFor="let s of series">
     <tr>
       <th scope="row">1</th>
-      <td>{{ s.nombre }}</td>
+      <td (click)="onSelected(s)">{{ s.nombre }} </td>
       <td>{{ s.canal }}</td>
       <td>{{ s.temporadas }}</td>
     </tr>
   </tbody>
 </table>
+<p>Seasons average: [promedio]="promedioTemporadas"</p>
+<div class="row p-2">
+  <div class="col border">
+    <div *ngIf="selected">
+      <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+    </div>
+  </div>
+</div>
 

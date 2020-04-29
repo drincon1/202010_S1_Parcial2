@@ -17,7 +17,7 @@ getSeries(): Observable<Array<Serie>> {
   return this.http.get<Array<Serie>>(this.apiUrl);
 }
 
-getBookDetail(serieId): Observable<SerieDetail> {
+getSerieDetail(serieId): Observable<SerieDetail> {
   return this.http.get<SerieDetail>(`${this.apiUrl}/${serieId}`);
 }
 
